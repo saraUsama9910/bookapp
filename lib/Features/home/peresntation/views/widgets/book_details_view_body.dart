@@ -48,7 +48,7 @@ class BookDetailsViewBody extends StatelessWidget {
           Align(
             alignment: Alignment.centerLeft,
             child: Text('You Can Also Like',
-                style: Styles.textStyle14.copyWith(
+                style: Styles.textStyle18.copyWith(
                     color: Colors.white,
                     decoration: TextDecoration.none,
                     fontWeight: FontWeight.w600)),
