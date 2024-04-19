@@ -40,7 +40,18 @@ class BookDetailsViewBody extends StatelessWidget {
             height: 18,
           ),
           const BookRating(),
-          const BookActions()
+          const BookActions(),
+          const SizedBox(
+            height: 40,
+          ),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Text('You Can Also Like',
+                style: Styles.textStyle14.copyWith(
+                    color: Colors.white,
+                    decoration: TextDecoration.none,
+                    fontWeight: FontWeight.w600)),
+          )
         ],
       ),
     );
