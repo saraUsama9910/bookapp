@@ -7,7 +7,7 @@ class SearchViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 30),
+      padding: EdgeInsets.symmetric(horizontal: 15, vertical: 14),
       child: Column(
         children: [CustomSearchTextField()],
       ),
@@ -23,6 +23,18 @@ class CustomSearchTextField extends StatelessWidget {
     return TextField(
       decoration: InputDecoration(
           hintText: 'Search',
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12),
+            borderSide: const BorderSide(
+              color: Colors.white,
+            ),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderSide: const BorderSide(
+              color: Colors.white,
+            ),
+            borderRadius: BorderRadius.circular(12),
+          ),
           suffixIcon: IconButton(
               onPressed: () {},
               icon: const Icon(
