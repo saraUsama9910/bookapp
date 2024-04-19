@@ -1,4 +1,5 @@
 import 'package:bookapp/Features/home/peresntation/views/widgets/book_actions.dart';
+import 'package:bookapp/Features/home/peresntation/views/widgets/book_details_section.dart';
 import 'package:bookapp/Features/home/peresntation/views/widgets/book_rating.dart';
 import 'package:bookapp/Features/home/peresntation/views/widgets/custom_book_details_view_app_bar.dart';
 import 'package:bookapp/Features/home/peresntation/views/widgets/custom_list_view_item.dart';
@@ -39,24 +40,3 @@ class BookDetailsViewBody extends StatelessWidget {
   }
 }
 
-class SimilarBooksSection extends StatelessWidget {
-  const SimilarBooksSection({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text('You Can Also Like',
-            style: Styles.textStyle18.copyWith(
-                color: Colors.white,
-                decoration: TextDecoration.none,
-                fontWeight: FontWeight.w600)),
-        const SizedBox(
-          height: 16,
-        ),
-        const SimilarBooksListView()
-      ],
-    );
-  }
-}
