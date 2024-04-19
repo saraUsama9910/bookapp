@@ -20,7 +20,7 @@ class CustomButton extends StatelessWidget {
         style: TextButton.styleFrom(
             backgroundColor: backGroundColor,
             shape: RoundedRectangleBorder(
-                borderRadius:borderRadius?? BorderRadius.circular(16))),
+                borderRadius: borderRadius ?? BorderRadius.circular(16))),
         child: Text('19.99 €',
             style: Styles.textStyle18
                 .copyWith(color: textColor, fontWeight: FontWeight.w900)),

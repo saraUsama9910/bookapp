@@ -1,8 +1,8 @@
+import 'package:bookapp/Features/home/peresntation/views/widgets/book_actions.dart';
 import 'package:bookapp/Features/home/peresntation/views/widgets/book_rating.dart';
 import 'package:bookapp/Features/home/peresntation/views/widgets/custom_book_details_view_app_bar.dart';
 import 'package:bookapp/Features/home/peresntation/views/widgets/custom_list_view_item.dart';
 import 'package:bookapp/core/utils/styles.dart';
-import 'package:bookapp/core/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
@@ -16,11 +16,8 @@ class BookDetailsViewBody extends StatelessWidget {
         children: [
           const CustomBookDetailsAppBar(),
           const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 80, vertical: 30),
+            padding: EdgeInsets.symmetric(horizontal: 80, vertical: 10),
             child: FeaturedListViewItem(),
-          ),
-          const SizedBox(
-            height: 20,
           ),
           Text(
             'the jungle book',
@@ -49,32 +46,6 @@ class BookDetailsViewBody extends StatelessWidget {
           const BookActions()
         ],
       ),
-    );
-  }
-}
-
-class BookActions extends StatelessWidget {
-  const BookActions({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Row(
-      children: [
-        Expanded(
-            child: CustomButton(
-          backGroundColor: Colors.white,
-          textColor: Colors.black,
-          borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(12), bottomLeft: Radius.circular(12)),
-        )),
-        Expanded(
-            child: CustomButton(
-          backGroundColor: Color.fromARGB(255, 221, 114, 114),
-          textColor: Colors.white,
-          borderRadius: BorderRadius.only(
-              topRight: Radius.circular(12), bottomRight: Radius.circular(12)),
-        ))
-      ],
     );
   }
 }
