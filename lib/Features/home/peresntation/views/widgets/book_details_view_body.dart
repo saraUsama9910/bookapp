@@ -8,25 +8,34 @@ class BookDetailsViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 30),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 30),
       child: Column(
         children: [
-          CustomBookDetailsAppBar(),
-          Padding(
+          const CustomBookDetailsAppBar(),
+          const Padding(
             padding: EdgeInsets.symmetric(horizontal: 80, vertical: 30),
             child: FeaturedListViewItem(),
           ),
+          const SizedBox(
+            height: 20,
+          ),
           Text(
             'the jungle book',
-            style: Styles.textStyle30,
+            style: Styles.textStyle30.copyWith(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                decoration: TextDecoration.none),
           ),
-          SizedBox(
+          const SizedBox(
             height: 6,
           ),
           Text(
             'ruyard kipling',
-            style: Styles.textStyle18,
+            style: Styles.textStyle18.copyWith(
+                color: Colors.white,
+                fontWeight: FontWeight.w500,
+                decoration: TextDecoration.none),
           )
         ],
       ),
