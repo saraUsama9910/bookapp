@@ -5,6 +5,17 @@ class SearchViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return const Column(
+      children: [CustomSearchTextField()],
+    );
+  }
+}
+
+class CustomSearchTextField extends StatelessWidget {
+  const CustomSearchTextField({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
   }
 }
