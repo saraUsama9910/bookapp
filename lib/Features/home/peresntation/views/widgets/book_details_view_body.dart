@@ -1,5 +1,6 @@
 import 'package:bookapp/Features/home/peresntation/views/widgets/custom_book_details_view_app_bar.dart';
 import 'package:bookapp/Features/home/peresntation/views/widgets/custom_list_view_item.dart';
+import 'package:bookapp/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
@@ -15,6 +16,17 @@ class BookDetailsViewBody extends StatelessWidget {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 80, vertical: 30),
             child: FeaturedListViewItem(),
+          ),
+          Text(
+            'the jungle book',
+            style: Styles.textStyle30,
+          ),
+          SizedBox(
+            height: 6,
+          ),
+          Text(
+            'ruyard kipling',
+            style: Styles.textStyle18,
           )
         ],
       ),
