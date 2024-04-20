@@ -9,7 +9,7 @@ class SimilarBooksSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: [ 
+      children: [
         Text('You Can Also Like',
             style: Styles.textStyle18.copyWith(
                 color: Colors.white,

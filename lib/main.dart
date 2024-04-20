@@ -16,7 +16,8 @@ class BookApp extends StatelessWidget {
     return MaterialApp.router(
         routerConfig: AppRouter.router,
         debugShowCheckedModeBanner: false,
-        theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: kPrimaryColor));
+        theme:
+            ThemeData.dark().copyWith(scaffoldBackgroundColor: kPrimaryColor));
   }
 }
 
