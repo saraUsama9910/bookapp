@@ -1,4 +1,6 @@
+import 'package:bookapp/Features/home/data/models/book_model/book_model.dart';
+
 abstract class HomeRepo {
-  featchBestSellerBooks();
-  fetchFeaturedBooks();
+  Future<List<BookModel>> featchBestSellerBooks();
+  Future<List<BookModel>> fetchFeaturedBooks();
 }
