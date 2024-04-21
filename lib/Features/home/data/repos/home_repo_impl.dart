@@ -1,9 +1,13 @@
 import 'package:bookapp/Features/home/data/models/book_model/book_model.dart';
 import 'package:bookapp/Features/home/data/repos/home_repo.dart';
 import 'package:bookapp/core/errors/failures.dart';
+import 'package:bookapp/core/utils/api_service.dart';
 import 'package:dart_either/src/dart_either.dart';
 
-class HomeRepoImpl implements HomeRepo{
+class HomeRepoImpl implements HomeRepo {
+  final ApiService apiService;
+
+  HomeRepoImpl({required this.apiService});
   @override
   Future<Either<Failure, List<BookModel>>> featchBestSellerBooks() {
     // TODO: implement featchBestSellerBooks
