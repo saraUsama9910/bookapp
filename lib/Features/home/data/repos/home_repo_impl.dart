@@ -10,8 +10,7 @@ class HomeRepoImpl implements HomeRepo {
   HomeRepoImpl({required this.apiService});
   @override
   Future<Either<Failure, List<BookModel>>> featchBestSellerBooks() {
-    // TODO: implement featchBestSellerBooks
-    throw UnimplementedError();
+    apiService.get(endPoint: 'volumes?Filtering=free-ebooks&Sorting=newest&q=subject:programming');
   }
 
   @override
