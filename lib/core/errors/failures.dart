@@ -21,7 +21,8 @@ class ServerFailure extends Failure {
       case DioExceptionType.badCertificate:
         return ServerFailure('Bad Certificate with ApiServer');
       case DioExceptionType.badResponse:
-        return ServerFailure('Bad Response with ApiServer');
+        return ServerFailure.fromBadResponse(
+            dioException.response!.statusCode!, dioException.response!.data);
       case DioExceptionType.cancel:
         return ServerFailure('Cancel with ApiServer');
       case DioExceptionType.connectionError:
@@ -30,9 +31,9 @@ class ServerFailure extends Failure {
         return ServerFailure('Unkown with ApiServer');
     }
   }
-  factory ServerFailure.fromBadResponse(int? statusCode, dynamic badresponse) {
+  factory ServerFailure.fromBadResponse(int statusCode, dynamic response) {
     if (statusCode == 400 || statusCode == 401 || statusCode == 403) {
-      return ServerFailure(badresponse['error']['message']);
+      return ServerFailure(response['error']['message']);
     } else if (statusCode == 404) {
       return ServerFailure('Your request not found, Please try later!');
     } else if (statusCode == 500) {
