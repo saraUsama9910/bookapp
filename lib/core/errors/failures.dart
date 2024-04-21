@@ -24,11 +24,15 @@ class ServerFailure extends Failure {
         return ServerFailure.fromBadResponse(
             dioException.response!.statusCode!, dioException.response!.data);
       case DioExceptionType.cancel:
-        return ServerFailure('Cancel with ApiServer');
+        return ServerFailure('Request to ApiServer Cancelled');
       case DioExceptionType.connectionError:
         return ServerFailure('Connection Error with ApiServer');
       case DioExceptionType.unknown:
-        return ServerFailure('Unkown with ApiServer');
+        if (dioException.message!.contains('SocketException')) {
+          return ServerFailure('No Internet Connection');
+        } else {
+          return ServerFailure('Unecpected Error ,Please Try Again Later!');
+        }
     }
   }
   factory ServerFailure.fromBadResponse(int statusCode, dynamic response) {
