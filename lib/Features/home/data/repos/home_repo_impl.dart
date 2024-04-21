@@ -21,7 +21,7 @@ class HomeRepoImpl implements HomeRepo {
       }
       return Right(books);
     } on Exception catch (e) {
-      // TODO
+      return Left(ServerFailure(''));
     }
   }
 
