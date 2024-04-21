@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:flutter/material.dart';
 
 abstract class Failure {
   final String errMessage;
@@ -30,9 +29,11 @@ class ServerFailure extends Failure {
       case DioExceptionType.unknown:
         if (dioException.message!.contains('SocketException')) {
           return ServerFailure('No Internet Connection');
-        } else {
-          return ServerFailure('Unecpected Error ,Please Try Again Later!');
         }
+        return ServerFailure('Unecpected Error ,Please Try Again Later!');
+      default:
+        return ServerFailure(
+            'Opps There was an Error, Please try again Later!');
     }
   }
   factory ServerFailure.fromBadResponse(int statusCode, dynamic response) {
