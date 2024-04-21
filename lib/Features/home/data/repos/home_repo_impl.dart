@@ -10,9 +10,13 @@ class HomeRepoImpl implements HomeRepo {
   HomeRepoImpl({required this.apiService});
   @override
   Future<Either<Failure, List<BookModel>>> featchNewestBooks() async {
-    var date = await apiService.get(
-        endPoint:
-            'volumes?Filtering=free-ebooks&Sorting=newest&q=subject:programming');
+    try {
+  var date = await apiService.get(
+      endPoint:
+          'volumes?Filtering=free-ebooks&Sorting=newest&q=subject:programming');
+} on Exception catch (e) {
+  // TODO
+}
   }
 
   @override
