@@ -14,7 +14,7 @@ class NewestBooksCubit extends Cubit<NewestBooksState> {
     result.fold(ifLeft: (failure) {
       emit(NewestBooksFailure(failure.errMessage));
     }, ifRight: (books) {
-      emit(FeaturedBooksSuccess(books));
+      emit(NewestBooksSuccess(books));
     });
   }
 }

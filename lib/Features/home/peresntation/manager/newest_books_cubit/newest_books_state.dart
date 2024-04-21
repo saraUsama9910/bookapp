@@ -16,7 +16,7 @@ final class NewestBooksFailure extends NewestBooksState {
   const NewestBooksFailure(this.errMessage);
 }
 
-final class FeaturedBooksSuccess extends NewestBooksState {
+final class NewestBooksSuccess extends NewestBooksState {
   final List<BookModel> books;
-  const FeaturedBooksSuccess(this.books);
+  const NewestBooksSuccess(this.books);
 }
