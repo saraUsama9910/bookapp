@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 void main() {
+  setup();
   runApp(const BookApp());
 }
 
@@ -39,6 +40,7 @@ class BookApp extends StatelessWidget {
     );
   }
 }
+
 final _router = GoRouter(
   routes: [
     GoRoute(
