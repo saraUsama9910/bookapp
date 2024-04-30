@@ -1,5 +1,6 @@
 import 'package:bookapp/Features/home/data/repos/home_repo_impl.dart';
 import 'package:bookapp/Features/home/peresntation/manager/featured_books_cubit/featured_books_cubit.dart';
+import 'package:bookapp/Features/home/peresntation/manager/newest_books_cubit/newest_books_cubit.dart';
 import 'package:bookapp/Features/splash/peresntation/views/splash_view.dart';
 import 'package:bookapp/constants.dart';
 import 'package:bookapp/core/utils/api_service.dart';
@@ -22,6 +23,15 @@ class BookApp extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (context) => FeaturedBooksCubit(
+            HomeRepoImpl(
+              ApiService(
+                Dio(),
+              ),
+            ),
+          ),
+        ),
+        BlocProvider(
+          create: (context) => NewestBooksCubit(
             HomeRepoImpl(
               ApiService(
                 Dio(),
