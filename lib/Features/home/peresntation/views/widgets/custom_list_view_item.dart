@@ -1,9 +1,9 @@
-import 'package:bookapp/core/utils/assets.dart';
 import 'package:flutter/material.dart';
 
 class FeaturedListViewItem extends StatelessWidget {
   const FeaturedListViewItem({
-    super.key, required this.imageUrl,
+    super.key,
+    required this.imageUrl,
   });
   final String imageUrl;
   @override
@@ -17,9 +17,9 @@ class FeaturedListViewItem extends StatelessWidget {
           // width: 120,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),
-            image: const DecorationImage(
+            image: DecorationImage(
               fit: BoxFit.fill,
-              image: AssetImage(AssetsData.testImage),
+              image: NetworkImage(imageUrl),
             ),
           ),
         ),
