@@ -15,9 +15,11 @@ class FeaturedListViewItem extends StatelessWidget {
         aspectRatio: 2.6 / 4,
         child: CachedNetworkImage(
           fit: BoxFit.fill,
+          placeholder: (context, url) =>
+              const Center(child: CircularProgressIndicator()),
           imageUrl: imageUrl,
           errorWidget: (context, url, error) =>
-          const Icon(Icons.image_not_supported_sharp),
+              const Icon(Icons.image_not_supported_sharp),
         ),
       ),
     );

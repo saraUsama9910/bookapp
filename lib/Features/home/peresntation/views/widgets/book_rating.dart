@@ -21,7 +21,7 @@ class BookRating extends StatelessWidget {
           height: 4,
         ),
         Text(
-          '4.8',
+          '2.1',
           style: Styles.textStyle16
               .copyWith(decoration: TextDecoration.none, color: Colors.white),
         ),
@@ -29,7 +29,7 @@ class BookRating extends StatelessWidget {
           height: 3,
         ),
         Text(
-          '(236)',
+          '(300)',
           style: Styles.textStyle14
               .copyWith(color: Colors.grey, decoration: TextDecoration.none),
         )
