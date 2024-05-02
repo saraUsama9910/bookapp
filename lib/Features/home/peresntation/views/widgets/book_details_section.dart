@@ -13,7 +13,7 @@ class BookDetailsSection extends StatelessWidget {
       children: [
         const Padding(
           padding: EdgeInsets.symmetric(horizontal: 80, vertical: 10),
-          child: FeaturedListViewItem(),
+          child: FeaturedListViewItem(imageUrl: 'https://th.bing.com/th/id/OIP.-b1hPYTHoYMQC3Fw7OwMCQHaK6?rs=1&pid=ImgDetMain',),
         ),
         Text(
           'the jungle book',

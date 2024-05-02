@@ -17,7 +17,7 @@ class SimilarBooksListView extends StatelessWidget {
             padding: EdgeInsets.symmetric(
               horizontal: 4,
             ),
-            child: FeaturedListViewItem(),
+            child: FeaturedListViewItem(imageUrl: 'https://th.bing.com/th/id/OIP.-b1hPYTHoYMQC3Fw7OwMCQHaK6?rs=1&pid=ImgDetMain',),
           );
         },
       ),
