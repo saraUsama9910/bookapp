@@ -1,3 +1,4 @@
+import 'package:bookapp/Features/home/peresntation/views/widgets/best_seller_list_view.dart';
 import 'package:bookapp/Features/search/peresntation/views/widgets/custom_search_text_field.dart';
 import 'package:bookapp/core/utils/styles.dart';
 import 'package:flutter/cupertino.dart';
@@ -43,7 +44,7 @@ class SearchResultListView extends StatelessWidget {
       itemBuilder: (context, index) {
         return const Padding(
           padding: EdgeInsets.symmetric(vertical: 8),
-          //child: BestSellerListViewItem(bookModel: state.books[index],),
+          child: BestSellerListView(),
         );
       },
     );
