@@ -16,13 +16,12 @@ class VolumeInfo extends Equatable {
   final int? pageCount;
   final String? printType;
   final List<String>? categories;
-  final int? averageRating;
-  final int? ratingCount;
+ 
   final String? maturityRating;
   final bool? allowAnonLogging;
   final String? contentVersion;
   final PanelizationSummary? panelizationSummary;
-  final ImageLinks imageLinks;
+  final ImageLinks? imageLinks;
   final String? language;
   final String? previewLink;
   final String? infoLink;
@@ -39,8 +38,7 @@ class VolumeInfo extends Equatable {
     this.pageCount,
     this.printType,
     this.categories,
-    this.averageRating, 
-    this.ratingCount,
+    
     this.maturityRating,
     this.allowAnonLogging,
     this.contentVersion,
@@ -68,8 +66,8 @@ class VolumeInfo extends Equatable {
         pageCount: json['pageCount'] as int?,
         printType: json['printType'] as String?,
         categories: (json['categories'] as List<dynamic>?)?.cast<String>(),
-        averageRating: json['averageRating']as int?,
-       ratingCount: json['ratingCount']as int?,
+        
+       
         maturityRating: json['maturityRating'] as String?,
         allowAnonLogging: json['allowAnonLogging'] as bool?,
         contentVersion: json['contentVersion'] as String?,
@@ -77,7 +75,8 @@ class VolumeInfo extends Equatable {
             ? null
             : PanelizationSummary.fromJson(
                 json['panelizationSummary'] as Map<String, dynamic>),
-        imageLinks: ImageLinks.fromJson(json['imageLinks'] as Map<String, dynamic>),
+        imageLinks: json['imageLinks'] ==null?null:
+        ImageLinks.fromJson(json['imageLinks'] as Map<String, dynamic>),
         language: json['language'] as String?,
         previewLink: json['previewLink'] as String?,
         infoLink: json['infoLink'] as String?,
@@ -96,8 +95,7 @@ class VolumeInfo extends Equatable {
         'pageCount': pageCount,
         'printType': printType,
         'categories': categories,
-        'averageRating':averageRating,
-        'ratingCount':ratingCount,
+       
         'maturityRating': maturityRating,
         'allowAnonLogging': allowAnonLogging,
         'contentVersion': contentVersion,
@@ -122,8 +120,7 @@ class VolumeInfo extends Equatable {
       pageCount,
       printType,
       categories,
-      averageRating,
-      ratingCount,
+     
       maturityRating,
       allowAnonLogging,
       contentVersion,

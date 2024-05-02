@@ -25,7 +25,7 @@ class BestSellerListViewItem extends StatelessWidget {
               AspectRatio(
                   aspectRatio: 2.5 / 4,
                   child: FeaturedListViewItem(
-                      imageUrl: bookModel.volumeInfo.imageLinks.thumbnail)),
+                      imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail??'')),
               const SizedBox(
                 width: 20,
               ),
