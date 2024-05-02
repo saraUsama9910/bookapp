@@ -10,7 +10,7 @@ class SimilarNewestBooksCubit extends Cubit<SimilarNewestBooksState> {
    final HomeRepo homeRepo;
   Future<void> fetchSimilarNewestBooks() async {
     emit(SimilarNewestBooksLoading());
-    var result = await homeRepo.fetchSimilarNewestBooks();
+    var result = await homeRepo.fetchSimilarNewestBooks(category: '');
     result.fold(ifLeft: (failure) {
       emit(SimilarNewestBooksFailure(failure.errMessage));
     }, ifRight: (books) {

@@ -1,7 +1,6 @@
 import 'package:bookapp/Features/home/data/repos/home_repo_impl.dart';
 import 'package:bookapp/Features/home/peresntation/manager/featured_books_cubit/featured_books_cubit.dart';
 import 'package:bookapp/Features/home/peresntation/manager/newest_books_cubit/newest_books_cubit.dart';
-import 'package:bookapp/Features/home/peresntation/manager/similar_newest_books_cubit/similar_newest_books_cubit.dart';
 import 'package:bookapp/Features/splash/peresntation/views/splash_view.dart';
 import 'package:bookapp/constants.dart';
 import 'package:bookapp/core/utils/app_router.dart';
@@ -31,11 +30,6 @@ class BookApp extends StatelessWidget {
           create: (context) => NewestBooksCubit(
             getIt.get<HomeRepoImpl>(),
           )..fetchNewestBooks(),
-        ),
-         BlocProvider(
-          create: (context) => SimilarNewestBooksCubit(
-            getIt.get<HomeRepoImpl>(),
-          )..fetchSimilarNewestBooks(),
         ),
       ],
       child: MaterialApp.router(

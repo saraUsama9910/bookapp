@@ -55,11 +55,12 @@ class HomeRepoImpl implements HomeRepo {
   }
 
   @override
-  Future<Either<Failure, List<BookModel>>> fetchSimilNewestarBooks() async {
+  Future<Either<Failure, List<BookModel>>> fetchSimilarNewestBooks(
+      {required String category}) async {
     try {
       var date = await apiService.get(
           endPoint:
-              'volumes?Filtering=free-ebooks&Sorting=newest&q=subject:comedy');
+              'volumes?Filtering=free-ebooks&Sorting=relevance &q=subject:movies');
       List<BookModel> books = [];
       for (var item in date['items']) {
         books.add(
@@ -75,11 +76,5 @@ class HomeRepoImpl implements HomeRepo {
       }
       return Left(e.toString() as Failure);
     }
-  }
-  
-  @override
-  Future<Either<Failure, List<BookModel>>> fetchSimilarNewestBooks() {
-    // TODO: implement fetchSimilarNewestBooks
-    throw UnimplementedError();
   }
 }
