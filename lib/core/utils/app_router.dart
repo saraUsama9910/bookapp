@@ -1,3 +1,4 @@
+import 'package:bookapp/Features/home/data/models/book_model/book_model.dart';
 import 'package:bookapp/Features/home/data/repos/home_repo_impl.dart';
 import 'package:bookapp/Features/home/peresntation/manager/similar_newest_books_cubit/similar_newest_books_cubit.dart';
 import 'package:bookapp/Features/home/peresntation/views/home_view.dart';
@@ -28,7 +29,7 @@ abstract class AppRouter {
           create: (context) => SimilarNewestBooksCubit(
             getIt.get<HomeRepoImpl>(),
           ),
-          child: const BookDetailsView(),
+          child:  BookDetailsView(bookModel: state.extra as BookModel ,),
         ),
       ),
       GoRoute(
