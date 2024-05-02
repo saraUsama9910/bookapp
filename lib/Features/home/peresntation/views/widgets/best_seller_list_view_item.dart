@@ -16,7 +16,8 @@ class BestSellerListViewItem extends StatelessWidget {
       padding: const EdgeInsets.only(left: 15, right: 15),
       child: GestureDetector(
         onTap: () {
-          GoRouter.of(context).push(AppRouter.kBookDetailsView);
+          GoRouter.of(context)
+              .push(AppRouter.kBookDetailsView, extra: bookModel);
         },
         child: SizedBox(
           height: 125,
@@ -25,7 +26,8 @@ class BestSellerListViewItem extends StatelessWidget {
               AspectRatio(
                   aspectRatio: 2.5 / 4,
                   child: FeaturedListViewItem(
-                      imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail??'')),
+                      imageUrl:
+                          bookModel.volumeInfo.imageLinks?.thumbnail ?? '')),
               const SizedBox(
                 width: 20,
               ),
