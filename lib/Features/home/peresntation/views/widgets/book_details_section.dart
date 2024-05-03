@@ -40,7 +40,9 @@ class BookDetailsSection extends StatelessWidget {
           height: 18,
         ),
         const BookRating(),
-         BookActions(bookModel: book,),
+        BooksAction(
+          bookModel: book,
+        ),
       ],
     );
   }

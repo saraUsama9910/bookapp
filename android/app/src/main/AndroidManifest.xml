@@ -4,13 +4,15 @@
 <queries>
   <intent>
     <action android:name="android.intent.action.VIEW" />
-    <data android:scheme="https" />
+    <data android:scheme="http" />
   </intent>
 </queries>
     <application
         android:label="bookapp"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/ic_launcher"
+        android:usesCleartextTraffic="true"
+        >
         <activity
             android:name=".MainActivity"
             android:exported="true"
