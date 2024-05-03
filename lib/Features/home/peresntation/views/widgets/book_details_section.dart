@@ -1,6 +1,6 @@
 import 'package:bookapp/Features/home/peresntation/views/widgets/book_actions.dart';
 import 'package:bookapp/Features/home/peresntation/views/widgets/book_rating.dart';
-import 'package:bookapp/Features/home/peresntation/views/widgets/custom_list_view_item.dart';
+import 'package:bookapp/Features/home/peresntation/views/widgets/featured_list_view_item.dart';
 import 'package:bookapp/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 

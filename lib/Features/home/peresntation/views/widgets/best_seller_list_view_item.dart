@@ -1,6 +1,6 @@
 import 'package:bookapp/Features/home/data/models/book_model/book_model.dart';
 import 'package:bookapp/Features/home/peresntation/views/widgets/book_rating.dart';
-import 'package:bookapp/Features/home/peresntation/views/widgets/custom_list_view_item.dart';
+import 'package:bookapp/Features/home/peresntation/views/widgets/featured_list_view_item.dart';
 import 'package:bookapp/constants.dart';
 import 'package:bookapp/core/utils/app_router.dart';
 import 'package:bookapp/core/utils/styles.dart';
@@ -24,10 +24,10 @@ class BestSellerListViewItem extends StatelessWidget {
           child: Row(
             children: [
               AspectRatio(
-                  aspectRatio: 2.5 / 4,
-                  child: FeaturedListViewItem(
-                      imageUrl:
-                          bookModel.volumeInfo.imageLinks?.thumbnail ?? '')),
+                aspectRatio: 2.5 / 4,
+                child: FeaturedListViewItem(
+                    imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail ?? ''),
+              ),
               const SizedBox(
                 width: 20,
               ),

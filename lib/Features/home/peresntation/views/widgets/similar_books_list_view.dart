@@ -1,5 +1,5 @@
-import 'package:bookapp/Features/home/peresntation/manager/similar_newest_books_cubit/similar_newest_books_cubit.dart';
-import 'package:bookapp/Features/home/peresntation/views/widgets/custom_list_view_item.dart';
+import 'package:bookapp/Features/home/peresntation/manager/featured_books_cubit/featured_books_cubit.dart';
+import 'package:bookapp/Features/home/peresntation/views/widgets/featured_list_view_item.dart';
 import 'package:bookapp/core/widgets/custom_error_widget.dart';
 import 'package:bookapp/core/widgets/custom_loading_indicator.dart';
 import 'package:cubit_form/cubit_form.dart';
@@ -10,29 +10,32 @@ class SimilarBooksListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<SimilarNewestBooksCubit, SimilarNewestBooksState>(
+    return BlocBuilder<FeaturedBooksCubit, FeaturedBooksState>(
       builder: (context, state) {
-        if (state is SimilarNewestBooksSuccess) {
+        if (state is FeaturedBooksSuccess) {
           return SizedBox(
-            height: MediaQuery.of(context).size.height * .18,
+            height: MediaQuery.of(context).size.height * .15,
             width: MediaQuery.of(context).size.height * 6,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               padding: EdgeInsets.zero,
+              itemCount: state.books.length,
+              physics: const BouncingScrollPhysics(),
               itemBuilder: (context, index) {
-                return const Padding(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 4,
+                return Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 5,
                   ),
                   child: FeaturedListViewItem(
-                    imageUrl:
-                        'https://th.bing.com/th/id/OIP.-b1hPYTHoYMQC3Fw7OwMCQHaK6?rs=1&pid=ImgDetMain',
+                    imageUrl: state.books[index].volumeInfo.imageLinks
+                            ?.smallThumbnail ??
+                        '',
                   ),
                 );
               },
             ),
           );
-        } else if (state is SimilarNewestBooksFailure) {
+        } else if (state is FeaturedBooksFailure) {
           return CustomErrorWidget(errMessage: state.errMessage);
         } else {
           return const CustomLoadingIndicator();

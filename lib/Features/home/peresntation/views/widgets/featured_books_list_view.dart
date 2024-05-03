@@ -1,5 +1,5 @@
 import 'package:bookapp/Features/home/peresntation/manager/featured_books_cubit/featured_books_cubit.dart';
-import 'package:bookapp/Features/home/peresntation/views/widgets/custom_list_view_item.dart';
+import 'package:bookapp/Features/home/peresntation/views/widgets/featured_list_view_item.dart';
 import 'package:bookapp/core/widgets/custom_error_widget.dart';
 import 'package:bookapp/core/widgets/custom_loading_indicator.dart';
 import 'package:cubit_form/cubit_form.dart';
@@ -26,7 +26,7 @@ class FeaturedBooksListView extends StatelessWidget {
                   padding:const EdgeInsets.symmetric(
                     horizontal: 4,
                   ),
-                  child: FeaturedListViewItem(imageUrl: state.books[index].volumeInfo.imageLinks?.thumbnail??'',),
+                  child: FeaturedListViewItem(imageUrl: state.books[index].volumeInfo.imageLinks?.thumbnail??''),
                 );
               },
             ),
