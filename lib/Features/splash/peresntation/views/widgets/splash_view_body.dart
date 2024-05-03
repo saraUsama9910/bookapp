@@ -33,7 +33,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Image.asset(AssetsData.logo),
+        Image.asset(AssetsData.logo,),
         slidingText(slidingAnimation: slidingAnimation),
       ],
     );
