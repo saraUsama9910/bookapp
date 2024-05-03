@@ -52,3 +52,4 @@ class SimilarBooksListView extends StatelessWidget {
     );
   }
 }
+
