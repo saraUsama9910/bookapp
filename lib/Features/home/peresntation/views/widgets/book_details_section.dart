@@ -24,6 +24,7 @@ class BookDetailsSection extends StatelessWidget {
               color: Colors.white,
               fontWeight: FontWeight.bold,
               decoration: TextDecoration.none),
+          textAlign: TextAlign.center,
         ),
         const SizedBox(
           height: 6,
